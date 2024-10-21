@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    {% load static%}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Mi Aplicación Django{% endblock %}</title>
@@ -13,7 +14,7 @@
         <nav>
             <ul>
                 <li><a href="{% url 'home' %}">Inicio</a></li>
-                <li><a href="{% url 'base' %}">Sobre nosotros</a></li>
+                <li><a href="{% url 'base' %}">Base</a></li>
             </ul>
         </nav>
     </header>
