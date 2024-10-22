@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     
     # App creadas
     'math_exercises',
+
 ]
 
 MIDDLEWARE = [
