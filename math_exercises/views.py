@@ -6,8 +6,8 @@ def home_view(request):
     return render(request, 'home.html')
 
 
-def Practica_Suma(request):
-    return render(request, 'Practica_Suma.html')
+def Suma(request):
+    return render(request, 'Suma.html')
 
 
 
