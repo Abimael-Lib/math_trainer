@@ -1,27 +1,31 @@
 import random # Modulo para generar numeros aleatorios
 from django.shortcuts import render
+from .forms import NumeroForm
 
 
+
+# Vista de la pagina principal 
 def home_view(request):    
     return render(request, 'home.html')
 
-
+# Vista de la pagina de Suma
 def Suma(request):
     return render(request, 'Suma.html')
 
 
+def numero_view(request):
+    resultado = None
+    if request.method == 'POST':
+        form = NumeroForm(request.POST)
+        if form.is_valid():
+            numero = form.cleaned_data['numero']
+            
+            resultado = numero * 2
+            
+    else:
+        form = NumeroForm()
+    
+    return render(request, 'Suma.html', {'form': form, 'resultado': resultado})
 
 
 
-# Generador de numeros aleatorios para la suma
-def random_numbers(request):
-    random_int1 = random.randint(1, 1000000000)
-    random_int2 = random.randint(1, 1000000000)
-    if response == random_int1 + random_int2:
-        print('Correct')
-        
-        
-        
-def is_correct(request):
-    if response == random_int1 + random_int2:
-        return 'Correct'
