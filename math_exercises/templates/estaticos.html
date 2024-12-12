@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Estadisticas{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <header>
+        <h1>Estaticos </h1>
+        
+
+        <h2>Categorias</h2>
+        <ul>
+            {% for category in categories%}
+                <li>{{category}}</li>
+            {% endfor %}
+        </ul>
+
+    </header>
+
+    <footer>
+        <p>&copy; 2024 Mi Aplicación</p>
+    </footer>
+</body>
+</html>

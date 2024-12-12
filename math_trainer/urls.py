@@ -16,9 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from . import views
 
 
 urlpatterns = [
     path("", include("math_exercises.urls")),
     path('admin/', admin.site.urls),
+    path('areaMatematica/<int:area>', views.areaMatematica),
+    path('simple/', views.simple, name='simple'),
 ]

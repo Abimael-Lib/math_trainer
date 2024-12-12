@@ -8,9 +8,10 @@ from .forms import NumeroForm
 def home_view(request):    
     return render(request, 'home.html')
 
-# Vista de la pagina de Suma
-def Suma(request):
-    return render(request, 'Suma.html')
+# Vista de la pagina de seleccion de operaciones
+def operacionesBasicas(request, operacion): # usar argumentos para seleccionar la operacion
+    if operacion == 'Suma': 
+        return render(request, 'Suma.html') 
 
 
 def numero_view(request):
@@ -27,5 +28,10 @@ def numero_view(request):
     
     return render(request, 'Suma.html', {'form': form, 'resultado': resultado})
 
+def estadisticas(request, name):
+    categories = ['operaciones', 'numeros']
+    context = {'name': name, 'categories': categories}
+    return render(request, 'Estadisticas.html', context)
 
-
+def estaticos(request):
+    return render(request, 'estaticos.html', {})
