@@ -8,3 +8,4 @@ def areaMatematica(request, area): # funcion para elegir tema de matematicas a p
     
 def simple(request):
     return render(request, 'home.html')
+
