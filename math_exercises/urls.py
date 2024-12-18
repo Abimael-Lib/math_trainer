@@ -1,14 +1,16 @@
 from django.urls import path
-from .views import estadisticas, ejercicios, estaticos, index, aritmetica, suma
-
+from . import views  
 
 
 
 urlpatterns = [ 
-    path("", index, name="index"),
-    path("estadisticas/", estadisticas, name="estadisticas"),
-    path("ejercicios", ejercicios, name="ejercicios"),
-    path("estaticos/", estaticos, name="estaticos"),
-    path("aritmetica/", aritmetica, name="aritmetica"),
-    path("suma/", suma, name="suma"),    
+    path("", views.index, name="index"),
+    path("estadisticas/", views.estadisticas, name="estadisticas"),
+    path("ejercicios", views.ejercicios, name="ejercicios"),
+    path("estaticos/", views.estaticos, name="estaticos"),
+    path("aritmetica/", views.aritmetica, name="aritmetica"),
+    path("suma/", views.suma, name="suma"),
+    path("create/", views.create, name="create"),
+    path("delete/", views.delete, name="delete")
+    
 ]

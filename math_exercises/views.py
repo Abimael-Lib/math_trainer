@@ -1,7 +1,7 @@
-import random # Modulo para generar numeros aleatorios
 from django.shortcuts import render
 from .forms import NumeroForm
-
+from django.http import HttpResponse
+from .models import Comment # clase de prueva
 
 
 # Vista de la pagina principal 
@@ -23,6 +23,19 @@ def suma(request):
     return render(request, 'Suma.html')
 
 
+
+
+
+def create(request):
+    comment = Comment(name="Choclo", score=5, comment="Este comentario es un comentario :v")
+    
+    #comment = Comment.objects.create(name="alex")
+    comment.save()
+    return render(request, "create.html")
+
+def delete():
+    Comment.objects.filter(id=2).delete()
+    return HttpResponse("Comentario borrado")
 
 
 

@@ -1,22 +1,20 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-    <head>
+    <head> 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'styles.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
         {% block styles %}{% endblock styles %}
         <title>{% block title %}{% endblock title %}</title>
     </head>
     <body>
 
         <header>
-            {% block header %}
-            
-            {% endblock header %}
+            {% include "layouts/partials/menu.html" %}
         </header>
         
         <nav>
@@ -27,13 +25,13 @@
 
 
         <main>
-            {% block main %}{% endblock main %}
+            {% block content %}{% endblock content %}
         </main>
 
 
-        <footer>
-            
-        </footer>
+        
+        {% include "layouts/partials/footer.html" %}
+        
         {% block scripts %}{% endblock scripts %}
     </body>
 </html>

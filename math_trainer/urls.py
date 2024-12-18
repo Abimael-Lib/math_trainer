@@ -20,8 +20,9 @@ from . import views
 
 
 urlpatterns = [
-    path("", include("math_exercises.urls")),
+    path("", include("math_exercises.urls")), # url app ejercicios
     path('admin/', admin.site.urls),
     path('areaMatematica/<int:area>', views.areaMatematica),
     path('simple/', views.simple, name='simple'),
+    
 ]

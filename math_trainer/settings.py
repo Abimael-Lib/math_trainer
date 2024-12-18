@@ -37,10 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
     # App creadas
     'math_exercises',
-
 ]
 
 MIDDLEWARE = [
@@ -122,13 +120,10 @@ USE_TZ = True
 STATIC_URL = 'math_exercises/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "math_exercises/static",
-    'var/www/static',
+    BASE_DIR / "math_exercises/static", # static ubicado en el proyecto
     ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
